@@ -21,17 +21,24 @@ app.get('/users', function (req, res) {
   // next();
     
   // Connecting to the database.
-  connection.getConnection(function (err, connection) {
+  // connection.getConnection(function (err, connection) {
 
+  results = [
+    {"name": "jeremie", "phone": "09876543"},
+    {"name": "mala", "phone": "09876543"},
+    {"name": "josue", "phone": "09876543"},
+    {"name": "isaac", "phone": "09876543"},
+    {"name": "caleb", "phone": "09876543"},
+  ]
     // Executing the MySQL query (select all data from the 'users' table).
-    connection.query('SELECT * FROM utilisateur', function (error, results, fields) {
+    //connection.query('SELECT * FROM utilisateur', function (error, results, fields) {
       // If some error occurs, we throw an error.
-      if (error) throw error;
+      //if (error) throw error;
 
       // Getting the 'response' from the database and sending it to our route. This is were the data is.
       res.send(results)
-    });
-  });
+    //});
+  //});
 });
 
 // Starting our server.
